@@ -40,3 +40,5 @@ jobs:
       run: just setup release
     - name: Build with CMake
       run: just build release
+    - name: Install
+      run: cmake --install build --prefix build/installed
