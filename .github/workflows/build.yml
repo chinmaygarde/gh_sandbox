@@ -37,9 +37,9 @@ jobs:
     - name: Pull Dependencies
       run: just sync
     - name: Generate Build Directory
-      run: just setup release
+      run: just setup
     - name: Build with CMake
-      run: just build release
+      run: just build
     - name: Install
       run: cmake --install build --prefix build/installed
     - uses: actions/upload-artifact@v4
