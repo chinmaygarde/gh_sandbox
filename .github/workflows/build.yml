@@ -44,6 +44,5 @@ jobs:
       run: cmake --install build --prefix build/installed
     - uses: actions/upload-artifact@v4
       with:
-        name: gh_sandbox_{{ runner.os }}_{{ runner.arch }}
         path: build/installed
-        if-no-files-found: false
+        if-no-files-found: 'error'
