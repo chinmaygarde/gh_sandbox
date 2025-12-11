@@ -42,3 +42,8 @@ jobs:
       run: just build release
     - name: Install
       run: cmake --install build --prefix build/installed
+    - uses: actions/upload-artifact@v4
+      with:
+        path: build/installed
+        if-no-files-found: false
+
