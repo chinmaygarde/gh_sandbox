@@ -56,6 +56,7 @@ jobs:
   release:
     permissions:
       contents: write
+      repository-projects: write
     name: Release Builds
     runs-on: ubuntu-24.04
     needs: build
@@ -70,4 +71,3 @@ jobs:
         with:
           name: Release ${{ github.refname }}
           files: dist/**/*
-          if-no-files-found: error
