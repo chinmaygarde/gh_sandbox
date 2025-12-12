@@ -57,6 +57,7 @@ jobs:
     name: Release Builds
     runs-on: ubuntu-24.04
     needs: build
+    if: github.ref_type == 'tag'
     steps:
       - name: Download artifacts.
         uses: actions/download-artifact@v5
