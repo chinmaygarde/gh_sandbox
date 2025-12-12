@@ -54,6 +54,8 @@ jobs:
         path: build/installed/bin/gh_sandbox_tests
         if-no-files-found: error
   release:
+    permissions:
+      contents: write
     name: Release Builds
     runs-on: ubuntu-24.04
     needs: build
