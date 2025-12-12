@@ -56,7 +56,6 @@ jobs:
   release:
     permissions:
       contents: write
-      repository-projects: write
     name: Release Builds
     runs-on: ubuntu-24.04
     needs: build
@@ -69,5 +68,4 @@ jobs:
           path: dist
       - uses: softprops/action-gh-release@v2
         with:
-          name: Release ${{ github.refname }}
           files: dist/**/*
