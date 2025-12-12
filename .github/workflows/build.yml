@@ -48,9 +48,9 @@ jobs:
       run: cmake --install build --prefix build/installed
     - uses: actions/upload-artifact@v4
       with:
-        name: gh_sandbox_${{ runner.os }}_${{ runner.arch }}
+        name: gh_sandbox_${{ lower(runner.os) }}_${{ lower(runner.arch) }}
         path: build/installed/bin/gh_sandbox_tests
-        if-no-files-found: 'error'
+        if-no-files-found: error
   release:
     name: Release Builds
     runs-on: ubuntu-24.04
@@ -65,4 +65,4 @@ jobs:
         with:
           name: gh_sandbox_uber
           path: dist
-          if-no-files-found: 'error'
+          if-no-files-found: error
